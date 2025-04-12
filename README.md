@@ -1,6 +1,6 @@
 # 🎥 Movie Recommendation System (Content-Based)
 
-This is a **Movie Recommendation System** project inspired by [CodeBasics' YouTube tutorial](https://youtu.be/1xtrIEwY_zY?feature=shared). It uses **content-based filtering** to suggest similar movies based on their genres, keywords, cast, crew, and overview using the IMDb movie dataset.
+**Movie Recommendation System** It uses **content-based filtering** to suggest similar movies based on their genres, keywords, cast, crew, and overview using the IMDb movie dataset.
 
 ---
 
@@ -13,6 +13,15 @@ This is a **Movie Recommendation System** project inspired by [CodeBasics' YouTu
 - ✅ No user-rating data required
 
 ---
+
+├── data/
+│   ├── tmdb_5000_movies.csv        # Movie metadata
+│   ├── tmdb_5000_credits.csv       # Cast and crew information
+├── movie_recommendation.ipynb      # Jupyter Notebook for EDA and recommendations
+├── recommend.py                   # Python script to generate recommendations
+├── app.py                         # (Optional) Streamlit application script
+├── requirements.txt               # List of required Python libraries
+└── README.md  
 
 ## 📁 Dataset
 
