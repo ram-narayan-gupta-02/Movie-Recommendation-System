@@ -16,11 +16,17 @@
 
 ├── data/
 │   ├── tmdb_5000_movies.csv        # Movie metadata
+
 │   ├── tmdb_5000_credits.csv       # Cast and crew information
+
 ├── movie_recommendation.ipynb      # Jupyter Notebook for EDA and recommendations
+
 ├── recommend.py                   # Python script to generate recommendations
+
 ├── app.py                         # (Optional) Streamlit application script
+
 ├── requirements.txt               # List of required Python libraries
+
 └── README.md  
 
 ## 📁 Dataset
