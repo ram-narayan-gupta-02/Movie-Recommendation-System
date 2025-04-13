@@ -147,5 +147,5 @@ Feel free to contribute by submitting a pull request or reporting issues!
 ---
 ## 📩 Contact
 
-📧 **Email**: ramnrngupta@gmail.com
-📌 **GitHub**: ram-narayan-gupta-02
+📧 Email: [ramnrngupta@gmail.com](mailto:ramnrngupta@gmail.com)
+📌 GitHub: [ram-narayan-gupta-02](https://github.com/ram-narayan-gupta-02)
