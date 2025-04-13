@@ -19,14 +19,14 @@
 
 MovieRecommendationSystem/
 │── dataset/
-│   ├── tmdb_5000_movies.csv          # Movie metadata
-│   ├── tmdb_5000_credits.csv         # Cast and crew data
-│── app.py                            # Streamlit app for prediction
-│── movie_recommendation.py           # Logic for movie recommendation
-│── movies.pkl                        # Serialized movie data (used for prediction)
-│── movies_dict.pkl                   # Serialized movie metadata dictionary
-│── requirements.txt                  # Required Python libraries
-│── README.md                         # Project documentation
+│   ├── tmdb_5000_movies.csv  
+│   ├── tmdb_5000_credits.csv     
+│── app.py                           
+│── movie_recommendation.py           
+│── movies.pkl                       
+│── movies_dict.pkl                   
+│── requirements.txt                
+│── README.md
 
 - ✅ **dataset/**: Contains movie metadata and cast information.
 - ✅ **app.py**: Streamlit app for generating movie recommendations.
