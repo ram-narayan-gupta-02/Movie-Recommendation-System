@@ -60,12 +60,12 @@ The dataset contains:
 - **crew** (Director, producers, etc.)
 - **overview** (Movie description)
 
-##🔹 Handling Missing Data
+🔹 **Handling Missing Data**
 
 **Keywords**: Filled with empty strings where missing.
 **Overview**: Left untouched, as missing values indicate that no description is available.
 
-##🔹 Encoding Categorical Variables
+🔹 **Encoding Categorical Variables**
 
 **Genres**: One-hot encoding for different genres.
 **Keywords**: Vectorized using TF-IDF for textual information.
