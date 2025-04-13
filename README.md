@@ -1,33 +1,42 @@
 # 🎥 Movie Recommendation System (Content-Based)
 
-**Movie Recommendation System** It uses **content-based filtering** to suggest similar movies based on their genres, keywords, cast, crew, and overview using the IMDb movie dataset.
+## 📌 Project Overview
+**Movie Recommendation System** This project is a **content-based movie recommendation system** that suggests movies similar to a given movie. It leverages movie metadata (such as genres, keywords, cast, crew, and overview) to make accurate recommendations. The system is built using Python, Pandas, Scikit-learn, and Streamlit for deployment, providing an interactive web interface for easy usage.
 
 ---
 
 ## 📌 Features
 
-- ✅ Recommends movies similar to the input movie
-- ✅ Uses movie metadata: genres, keywords, cast, crew, overview
-- ✅ Applies **TF-IDF** and **cosine similarity** for content similarity
-- ✅ Lightweight and beginner-friendly implementation in Python
-- ✅ No user-rating data required
+- ✅ **Data Preprocessing**: Handles missing values and extracts relevant features like genres, keywords, and cast.
+- ✅ **Exploratory Data Analysis (EDA)**: Visualizes key patterns and insights in the movie dataset.
+- ✅ **Feature Engineering**: Transforms data into suitable formats for machine learning.
+- ✅ **Machine Learning Model**: Implements cosine similarity between TF-IDF vectors for movie recommendations.
+- ✅ **Web App with Streamlit**: Allows users to input a movie title and get recommendations based on similarity.
 
 ---
 
-├── data/
-│   ├── tmdb_5000_movies.csv        # Movie metadata
+## 📂 Project Structure
 
-│   ├── tmdb_5000_credits.csv       # Cast and crew information
+MovieRecommendationSystem/
+│── dataset/
+│   ├── tmdb_5000_movies.csv          # Movie metadata
+│   ├── tmdb_5000_credits.csv         # Cast and crew data
+│── app.py                            # Streamlit app for prediction
+│── movie_recommendation.py           # Logic for movie recommendation
+│── movies.pkl                        # Serialized movie data (used for prediction)
+│── movies_dict.pkl                   # Serialized movie metadata dictionary
+│── requirements.txt                  # Required Python libraries
+│── README.md                         # Project documentation
 
-├── movie_recommendation.ipynb      # Jupyter Notebook for EDA and recommendations
+- ✅ **dataset/**: Contains movie metadata and cast information.
+- ✅ **app.py**: Streamlit app for generating movie recommendations.
+- ✅ **movie_recommendation.py**: Core recommendation logic.
+- ✅ **movies.pkl**: Serialized movie data for quick access.
+- ✅ **movies_dict.pkl**: Serialized movie metadata.
+- ✅ **requirements.txt**: List of dependencies for the project.
+- ✅ **README.md**: Project documentation.
 
-├── recommend.py                   # Python script to generate recommendations
-
-├── app.py                         # (Optional) Streamlit application script
-
-├── requirements.txt               # List of required Python libraries
-
-└── README.md  
+---
 
 ## 📁 Dataset
 
@@ -36,6 +45,44 @@ The dataset used includes two CSV files from [Kaggle](https://www.kaggle.com/dat
 - `movies.csv` – Basic movie info
 - `credits.csv` – Cast and crew details
 
+---
+
+## 📊 Data Preprocessing & EDA
+
+The dataset contains:
+
+- **movieId** (Unique ID)
+- **title** (Movie title)
+- **genres** (Movie genres)
+- **keywords** (Related keywords)
+- **cast** (Movie cast)
+- **crew** (Director, producers, etc.)
+- **overview** (Movie description)
+
+###🔹 Handling Missing Data
+
+**Keywords**: Filled with empty strings where missing.
+**Overview**: Left untouched, as missing values indicate that no description is available.
+
+###🔹 Encoding Categorical Variables
+
+**Genres**: One-hot encoding for different genres.
+**Keywords**: Vectorized using TF-IDF for textual information.
+**Cast and Crew**: Extracted and cleaned for use in the recommendation model.
+
+---
+
+## 🔍 Model Training
+
+**Algorithm Used**: Cosine Similarity with TF-IDF Vectorization
+```
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+
+tfidf = TfidfVectorizer(stop_words='english')
+tfidf_matrix = tfidf.fit_transform(movies['overview'])
+cosine_sim = cosine_similarity(tfidf_matrix, tfidf_matrix)
+```
 ---
 
 ## 🧠 How It Works
@@ -62,10 +109,42 @@ The dataset used includes two CSV files from [Kaggle](https://www.kaggle.com/dat
 
 ---
 
-## 🚀 Quick Start
+## Model Performance
 
-### 1. Clone the Repository
+- The model provides accurate movie recommendations based on content similarity.
+- Cosine similarity calculates similarity between movies, considering their metadata (genres, keywords, etc.).
 
-```bash
-git clone https://github.com/yourusername/movie-recommendation-content-based.git
-cd movie-recommendation-content-based
+---
+
+## 🖥️ Running the Web App
+
+**Run Streamlit App**
+```
+streamlit run app.py
+```
+**Alternative**: Run via Python Script
+```
+python -m streamlit run app.py
+```
+**Access in Browser**
+Once running, open in your browser.
+
+---
+
+## 🛠️ Future Improvements
+
+- ✅ Implement collaborative filtering to enhance recommendations with user ratings.
+- ✅ Add more machine learning models like Random Forest or SVM for better predictions.
+- ✅ Deploy the app using Heroku or AWS for public access.
+
+---
+
+## 🤝 Contributing
+
+Feel free to contribute by submitting a pull request or reporting issues!
+
+---
+## 📩 Contact
+
+📧 **Email**: ramnrngupta@gmail.com
+📌 **GitHub**: ram-narayan-gupta-02
