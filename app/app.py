@@ -4,6 +4,14 @@ import streamlit as st
 import pickle
 import pandas as pd
 import requests
+import os
+import gdown 
+
+model_path = "model/similarity.pkl"
+if not os.path.exists(model_path):
+    url = "https://drive.google.com/uc?id=https://drive.google.com/file/d/1-RTW0z5-F8bri-zvxk7a5UBlZ1Os3rkb/view?usp=drive_link"  # public link
+    os.makedirs("model", exist_ok=True)
+    gdown.download(url, model_path, quiet=False)
 
 def fetch_poster(movie_id):
     if not movie_id:
@@ -57,7 +65,7 @@ def recommend(movie):
 
 movies_dict = pickle.load(open('model/movies_dict.pkl', 'rb'))
 movies = pd.DataFrame(movies_dict)
-# similarity = pickle.load(open('model/similarity.pkl', 'rb'))
+similarity = pickle.load(open(model_path, "rb"))
 
 st.title('Movie Recommender System')
 
@@ -82,4 +90,5 @@ if st.button("Recommend"):
         st.text(names[4])
 
         st.image(posters[4])
+
 
