@@ -55,9 +55,9 @@ def recommend(movie):
         recommended_movies_posters.append(fetch_poster(movie_id))
     return recommended_movies, recommended_movies_posters
 
-movies_dict = pickle.load(open('D:/Python/ML/MovieRecomSystem/model/movies_dict.pkl', 'rb'))
+movies_dict = pickle.load(open('model/movies_dict.pkl', 'rb'))
 movies = pd.DataFrame(movies_dict)
-# similarity = pickle.load(open('D:/Python/ML/MovieRecomSystem/model/similarity.pkl', 'rb'))
+similarity = pickle.load(open('model/similarity.pkl', 'rb'))
 
 st.title('Movie Recommender System')
 
