@@ -9,7 +9,7 @@ import gdown
 
 model_path = "model/similarity.pkl"
 if not os.path.exists(model_path):
-    url = "https://drive.google.com/uc?id=https://drive.google.com/file/d/1-RTW0z5-F8bri-zvxk7a5UBlZ1Os3rkb/view?usp=drive_link"  # public link
+    url = "https://drive.google.com/file/d/1-RTW0z5-F8bri-zvxk7a5UBlZ1Os3rkb/view?usp=drivesdk"  # public link to similarity.pkl file download
     os.makedirs("model", exist_ok=True)
     gdown.download(url, model_path, quiet=False)
 
